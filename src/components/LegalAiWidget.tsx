@@ -42,21 +42,20 @@ export const LegalAiWidget = () => {
     setInputMessage('');
     setIsTyping(true);
 
-    // Dynamic Mock AI Responses based on keywords
     setTimeout(() => {
-      let aiResponseText = 'Untuk kueri tersebut, Anda dapat merujuk pada regulasi perundang-undangan dan koleksi pustaka terkait di katalog utama SemarMaca. Silakan manfaatkan pencarian dengan kata kunci spesifik.';
+      let aiResponseText = 'Untuk kueri tersebut, Anda dapat merujuk pada regulasi perundang-undangan dan koleksi pustaka terkait di katalog utama SemarMaca.';
 
       const lower = userText.toLowerCase();
       if (lower.includes('pidana') || lower.includes('kuhp')) {
-        r: aiResponseText = 'Mengenai Hukum Pidana, rujukan utama di katalog adalah "Asas-Asas Hukum Pidana Indonesia" karya Prof. Moeljatno serta analisis KUHP Baru (UU No. 1/2023).';
+        aiResponseText = 'Mengenai Hukum Pidana, rujukan utama di katalog adalah "Asas-Asas Hukum Pidana Indonesia" karya Prof. Moeljatno serta analisis KUHP Baru (UU No. 1/2023).';
       } else if (lower.includes('ikn') || lower.includes('nusantara')) {
-        r: aiResponseText = 'Terkait isu IKN, riset akademis terbaru FH UWGM membahas UU No. 21/2023 tentang IKN dan implikasinya terhadap hak atas tanah adat di Penajam Paser Utara.';
+        aiResponseText = 'Terkait isu IKN, riset akademis terbaru FH UWGM membahas UU No. 21/2023 tentang IKN dan implikasinya terhadap hak atas tanah adat di Penajam Paser Utara.';
       } else if (lower.includes('perdata') || lower.includes('kontrak')) {
-        r: aiResponseText = 'Untuk Hukum Perdata dan Perikatan, Anda dapat menggunakan referensi utama "Hukum Perdata Indonesia" oleh Subekti, S.H. yang tersedia di Rak H-03.';
+        aiResponseText = 'Untuk Hukum Perdata dan Perikatan, Anda dapat menggunakan referensi utama "Hukum Perdata Indonesia" oleh Subekti, S.H. yang tersedia di Rak H-03.';
       } else if (lower.includes('pinjam') || lower.includes('booking')) {
-        r: aiResponseText = 'Peminjaman buku fisik dapat dilakukan dengan menekan tombol "Detail" pada kartu buku, lalu klik "Pengajuan Booking Fisik" untuk mendapatkan Kode Tiket Booking.';
+        aiResponseText = 'Peminjaman buku fisik dapat dilakukan dengan menekan tombol "Detail" pada kartu buku, lalu klik "Pengajuan Booking Fisik" untuk mendapatkan Kode Tiket Booking.';
       } else if (lower.includes('uwgm') || lower.includes('fakultas') || lower.includes('perpustakaan')) {
-        r: aiResponseText = 'Perpustakaan Hukum UWGM berlokasi di Kampus Universitas Widya Gama Mahakam Samarinda. Layanan fisik buka setiap hari kerja pukul 08.00 - 16.00 WITA.';
+        aiResponseText = 'Perpustakaan Hukum UWGM berlokasi di Kampus Universitas Widya Gama Mahakam Samarinda. Layanan fisik buka setiap hari kerja pukul 08.00 - 16.00 WITA.';
       }
 
       const aiMsg: Message = {
